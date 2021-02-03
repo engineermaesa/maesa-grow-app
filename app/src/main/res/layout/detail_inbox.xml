@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/text_view_detail_inbox_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CAFE CEO #6 : MAESA LAWAN CORONA Ada yang berbeda pada pelaksanaan Café CEO #6 Bulan April ini, dimana biasanya acara diselenggarakan di café dengan mengundang para peserta. Tapi, dikarenakan adanya Pandemi Corona, maka acara dilaksanakan secara Online. Acara Café CEO..."
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/button_apply_now"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:text="Apply now"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:background="@drawable/background_top_dashboard"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/text_view_detail_inbox_content"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "667033051617",
+    "project_id": "maesa-grow",
+    "storage_bucket": "maesa-grow.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:667033051617:android:0bf3abbc7b4339165632a0",
+        "android_client_info": {
+          "package_name": "com.fauzighozali.mgamobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "667033051617-241v1dp2pfoocpdf2sgb7u08se7rcr7j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fauzighozali.mgamobile",
+            "certificate_hash": "5dbde1436940b3b708defae10fe7d8efa556c2c2"
+          }
+        },
+        {
+          "client_id": "667033051617-9dj0nme5m10uvh671117cls04p32c07a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4U4u7p4JkHiilPVvLNfia7vdpgHNWJB8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "667033051617-9dj0nme5m10uvh671117cls04p32c07a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

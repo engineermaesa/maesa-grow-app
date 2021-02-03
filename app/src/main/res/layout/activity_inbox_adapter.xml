@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".adapter.InboxAdapter">
+
+    <TextView
+        android:id="@+id/text_view_inbox_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cafe CEO"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/text_view_inbox_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CAFE CEO #6 : MAESA LAWAN CORONA Ada yang berbeda pada pelaksanaan Café CEO #6 Bulan April ini, dimana biasanya acara diselenggarakan di café dengan mengundang para peserta. Tapi, dikarenakan adanya Pandemi Corona, maka acara dilaksanakan secara Online. Acara Café CEO..."
+        android:textSize="11sp"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:maxLines="3"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:gravity="right">
+
+        <Button
+            android:id="@+id/button_apply_now"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:text="Apply now"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_gradient_style_enable"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            android:textSize="12sp"/>
+
+        <Button
+            android:id="@+id/button_reminder"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:text="Reminder"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_gradient_style_enable"
+            android:layout_gravity="right"
+            android:textSize="12sp"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="bottom" />
+
+</LinearLayout>
