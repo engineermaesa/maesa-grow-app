@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.text.HtmlCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -212,7 +213,7 @@ public class TesActivity extends AppCompatActivity {
         enableOptions(false);
         btnNext.setEnabled(true);
         btnNext.setAlpha(1);
-        if (selectOption.getText().equals(list.get(position).getAnswer_true())) {
+        if (selectOption.getText().toString().equals(list.get(position).getAnswer_true())) {
             //correct
             score+=20;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
