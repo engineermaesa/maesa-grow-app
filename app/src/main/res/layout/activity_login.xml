@@ -20,6 +20,7 @@
                 android:id="@+id/image_login_ilustration"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
+                android:padding="50dp"
                 android:src="@drawable/login_ilustration"/>
 
             <LinearLayout

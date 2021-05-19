@@ -63,7 +63,7 @@ public class CertificationActivity extends AppCompatActivity {
         swipeContainer = findViewById(R.id.swipe_refresh_layout);
         mToolbar = findViewById(R.id.toolbar);
         mTitleToolbar = mToolbar.findViewById(R.id.toolbar_title);
-        mTitleToolbar.setText("Certification Of Position");
+        mTitleToolbar.setText("Soft Skill");
 
         setSupportActionBar(mToolbar);
         if (getSupportActionBar() != null) {
@@ -95,7 +95,7 @@ public class CertificationActivity extends AppCompatActivity {
     }
 
     private void getCourseCertification() {
-        call = service.getCourseCertificationDashboard(1,1);
+        call = service.getCourseCertificationDashboard(4,1);
         call.enqueue(new Callback<GetResponseCourse>() {
             @Override
             public void onResponse(Call<GetResponseCourse> call, Response<GetResponseCourse> response) {

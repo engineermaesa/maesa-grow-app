@@ -139,7 +139,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                     List<User> userList = response.body().getData();
                     for (int i = 0; i < userList.size(); i++) {
                         User user = userList.get(i);
-                        Picasso.with(getApplicationContext()).load("http://api-kms.maesagroup.co.id/files/" + user.getImage()).into(ivUser);
+                        Picasso.with(getApplicationContext()).load(user.getUiAvatar()).into(ivUser);
                         tvUsername.setText(user.getName());
                         tvOrganizations.setText(user.getOrganization().getName());
                         tvCompany.setText(user.getCompany().getName());

@@ -9,8 +9,8 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitBuilder {
-//    private static final String BASE_URL = "http://10.0.2.2:8000/api/";
-//    private static final String BASE_URL = "http://192.168.1.25:80/api/";
+
+//    private static final String BASE_URL = "https://api-staging-kms.duatanganindonesia.com/api/";
     private static final String BASE_URL = "http://api-kms.maesagroup.co.id/api/";
 
     private final static OkHttpClient client = buildClient();

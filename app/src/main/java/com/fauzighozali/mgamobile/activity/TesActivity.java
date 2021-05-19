@@ -10,10 +10,12 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -28,6 +30,8 @@ import com.fauzighozali.mgamobile.model.GetResponseDetailCourse;
 import com.fauzighozali.mgamobile.model.GetResponseMessage;
 import com.fauzighozali.mgamobile.model.Test;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,7 +44,8 @@ public class TesActivity extends AppCompatActivity {
     private static final String TAG = "TesActivity";
 
     private Toolbar mToolbar;
-    private TextView mTitleToolbar, tvSoal, tvIndicator;
+    private TextView mTitleToolbar, tvIndicator;
+    private TextView tvSoal;
     private LinearLayout optionsContainer;
     private Button btnNext;
     private int count = 0;
@@ -98,7 +103,7 @@ public class TesActivity extends AppCompatActivity {
                         optionsContainer.getChildAt(i).setOnClickListener(v -> checkAnswer((Button) v));
                     }
 
-                    playAnim(tvSoal,0,list.get(position).getQuestion());
+                    playAnim(tvSoal,0, list.get(position).getQuestion());
 
                     btnNext.setOnClickListener(v -> {
                         btnNext.setEnabled(false);
@@ -178,7 +183,10 @@ public class TesActivity extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 if (value == 0) {
                     try {
-                        ((TextView) view).setText(data);
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                            ((TextView) view).setText(Html.fromHtml(data, Html.FROM_HTML_MODE_LEGACY));
+                        } else
+                            ((TextView) view).setText(Html.fromHtml(data));
                         tvIndicator.setText(position+1+"/"+list.size());
                     }catch (ClassCastException ex) {
                         ((Button) view).setText(data);

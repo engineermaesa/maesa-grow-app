@@ -55,7 +55,7 @@ public class OrientedActivity extends AppCompatActivity {
         swipeContainer = findViewById(R.id.swipe_refresh_layout);
         mToolbar = findViewById(R.id.toolbar);
         mTitleToolbar = mToolbar.findViewById(R.id.toolbar_title);
-        mTitleToolbar.setText("Company Oriented");
+        mTitleToolbar.setText("Our Company");
 
         setSupportActionBar(mToolbar);
         if (getSupportActionBar() != null) {

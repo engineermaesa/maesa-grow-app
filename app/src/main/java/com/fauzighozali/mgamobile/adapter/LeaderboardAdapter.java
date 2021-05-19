@@ -41,7 +41,7 @@ public class LeaderboardAdapter extends RecyclerView.Adapter<LeaderboardAdapter.
         Leaderboard leaderboard = dataModelArrayList.get(i);
 
         Glide.with(context)
-                .load("http://api-kms.maesagroup.co.id/files/" + leaderboard.getImage())
+                .load(leaderboard.getUiAvatar())
                 .into(leaderboardViewHolder.imgLead);
 
         leaderboardViewHolder.tvRank.setText(String.valueOf(i+1));

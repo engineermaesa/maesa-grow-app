@@ -3,12 +3,14 @@ package com.fauzighozali.mgamobile.fragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,11 +18,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.fauzighozali.mgamobile.R;
 import com.fauzighozali.mgamobile.activity.CertificationActivity;
 import com.fauzighozali.mgamobile.activity.DetailBookActivity;
+import com.fauzighozali.mgamobile.activity.HardSkillActivity;
 import com.fauzighozali.mgamobile.activity.LevelActivity;
 import com.fauzighozali.mgamobile.activity.LoginActivity;
 import com.fauzighozali.mgamobile.activity.OrientedActivity;
@@ -45,7 +49,7 @@ public class DashboardFragment extends Fragment {
 
     private static final String TAG = "DashboardFragment";
 
-    private LinearLayout llCertified, llOriented, ll1Vhs, llSeeAll;
+    private LinearLayout llHardSkill, llSoftSkill, llOurCompany, llCorporateValue, llSeeAll;
     private ImageView ivIdCard;
 
     private AllBookAdapter bookAdapter;
@@ -61,9 +65,10 @@ public class DashboardFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Dashboard");
 
-        llCertified = view.findViewById(R.id.linear_layout_certified);
-        llOriented = view.findViewById(R.id.linear_layout_oriented);
-        ll1Vhs = view.findViewById(R.id.linear_layout_course);
+        llHardSkill = view.findViewById(R.id.linear_layout_hard_skill);
+        llSoftSkill = view.findViewById(R.id.linear_layout_soft_skill);
+        llOurCompany = view.findViewById(R.id.linear_layout_our_company);
+        llCorporateValue = view.findViewById(R.id.linear_layout_corporate_value);
         llSeeAll = view.findViewById(R.id.linear_layout_seeall);
         ivIdCard = view.findViewById(R.id.image_view_id_card);
 
@@ -81,17 +86,22 @@ public class DashboardFragment extends Fragment {
         Picasso.with(getContext()).load("http://api-kms.maesagroup.co.id/files/" + tokenManager.getToken().getFile()).into(ivIdCard);
         getDataBook();
 
-        llCertified.setOnClickListener(v -> {
+        llHardSkill.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), HardSkillActivity.class);
+            startActivity(intent);
+        });
+
+        llSoftSkill.setOnClickListener(v -> {
             Intent intent = new Intent(getContext(), CertificationActivity.class);
             startActivity(intent);
         });
 
-        llOriented.setOnClickListener(v -> {
+        llOurCompany.setOnClickListener(v -> {
             Intent intent = new Intent(getContext(), OrientedActivity.class);
             startActivity(intent);
         });
 
-        ll1Vhs.setOnClickListener(v -> {
+        llCorporateValue.setOnClickListener(v -> {
             Intent intent = new Intent(getContext(), VHSActivity.class);
             startActivity(intent);
         });

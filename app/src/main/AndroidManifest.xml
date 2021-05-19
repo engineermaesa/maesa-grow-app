@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".activity.HardSkillActivity"></activity>
         <activity
             android:name=".activity.SplashActivity"
             android:screenOrientation="portrait">
@@ -39,7 +40,7 @@
 
         <activity
             android:name=".activity.IntroActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.LoginActivity"
             android:screenOrientation="portrait" />

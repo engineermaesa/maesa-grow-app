@@ -37,7 +37,7 @@
             android:gravity="center_horizontal">
 
             <LinearLayout
-                android:id="@+id/linear_layout_certified"
+                android:id="@+id/linear_layout_hard_skill"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:orientation="vertical"
@@ -52,7 +52,7 @@
                 <TextView
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
-                    android:text="Certification Of Position"
+                    android:text="Hard Skill"
                     android:textColor="@color/black"
                     android:layout_marginTop="5dp"
                     android:textAlignment="center"
@@ -62,13 +62,39 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/linear_layout_oriented"
+                android:id="@+id/linear_layout_soft_skill"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:orientation="vertical"
-                android:layout_toRightOf="@id/linear_layout_certified"
+                android:layout_toRightOf="@id/linear_layout_hard_skill"
                 android:gravity="center"
-                android:layout_marginLeft="30dp">
+                android:layout_marginLeft="20dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/certification_of_position"/>
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="Soft Skill"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="5dp"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_layout_our_company"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:orientation="vertical"
+                android:layout_toRightOf="@id/linear_layout_soft_skill"
+                android:gravity="center"
+                android:layout_marginLeft="20dp">
 
                 <ImageView
                     android:layout_width="30dp"
@@ -78,7 +104,7 @@
                 <TextView
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
-                    android:text="Company Orientation"
+                    android:text="Our Company"
                     android:textColor="@color/black"
                     android:layout_marginTop="5dp"
                     android:textAlignment="center"
@@ -88,25 +114,25 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/linear_layout_course"
-                android:layout_width="70dp"
+                android:id="@+id/linear_layout_corporate_value"
+                android:layout_width="80dp"
                 android:layout_height="70dp"
                 android:orientation="vertical"
-                android:layout_toRightOf="@id/linear_layout_oriented"
+                android:layout_toRightOf="@id/linear_layout_our_company"
                 android:gravity="center"
-                android:layout_marginLeft="30dp">
+                android:layout_marginLeft="20dp">
 
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_gravity="center_horizontal"
+                    android:layout_gravity="center"
                     android:scaleType="fitXY"
                     android:src="@drawable/pin_vhs" />
 
                 <TextView
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Company      Value"
+                    android:text="Corporate Value"
                     android:textColor="@color/black"
                     android:layout_marginTop="5dp"
                     android:textAlignment="center"

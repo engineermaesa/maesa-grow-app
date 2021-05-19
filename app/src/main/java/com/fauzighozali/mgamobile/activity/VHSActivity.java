@@ -55,7 +55,7 @@ public class VHSActivity extends AppCompatActivity {
         swipeContainer = findViewById(R.id.swipe_refresh_layout);
         mToolbar = findViewById(R.id.toolbar);
         mTitleToolbar = mToolbar.findViewById(R.id.toolbar_title);
-        mTitleToolbar.setText("1 Visi Hati Semangat");
+        mTitleToolbar.setText("Corporate Value");
 
         setSupportActionBar(mToolbar);
         if (getSupportActionBar() != null) {

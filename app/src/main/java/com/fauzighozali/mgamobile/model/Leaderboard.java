@@ -11,6 +11,9 @@ public class Leaderboard {
     @SerializedName("image")
     @Expose
     private String image;
+    @SerializedName("ui_avatar")
+    @Expose
+    private String uiAvatar;
     @SerializedName("total_score")
     @Expose
     private String totalScore;
@@ -25,6 +28,14 @@ public class Leaderboard {
 
     public String getImage() {
         return image;
+    }
+
+    public String getUiAvatar() {
+        return uiAvatar;
+    }
+
+    public void setUiAvatar(String uiAvatar) {
+        this.uiAvatar = uiAvatar;
     }
 
     public void setImage(String image) {

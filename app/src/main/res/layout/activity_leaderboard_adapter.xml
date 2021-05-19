@@ -32,8 +32,6 @@
             android:id="@+id/image_view_person"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:civ_border_width="2dp"
-            app:civ_border_color="@color/gradient_start_color"
             android:layout_marginLeft="15dp"/>
 
         <LinearLayout

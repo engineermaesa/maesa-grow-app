@@ -35,6 +35,9 @@ public class User {
     @SerializedName("image")
     @Expose
     private String image;
+    @SerializedName("ui_avatar")
+    @Expose
+    private String uiAvatar;
     @SerializedName("company")
     @Expose
     private Company company;
@@ -116,6 +119,14 @@ public class User {
 
     public String getImage() {
         return image;
+    }
+
+    public String getUiAvatar() {
+        return uiAvatar;
+    }
+
+    public void setUiAvatar(String uiAvatar) {
+        this.uiAvatar = uiAvatar;
     }
 
     public void setImage(String image) {

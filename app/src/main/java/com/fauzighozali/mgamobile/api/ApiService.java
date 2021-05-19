@@ -54,12 +54,6 @@ public interface ApiService {
     @GET("mobile/books")
     Call<GetResponseBook> getBook();
 
-    @GET("mobile/course_list")
-    Call<GetResponseCourse> getCourseCertification(
-            @Query("type") int type,
-            @Query("is_mobile") int is_mobile
-    );
-
     @GET("mobile/course_list_dashboard")
     Call<GetResponseCourse> getCourseCertificationDashboard(
             @Query("type") int type,
@@ -94,15 +88,4 @@ public interface ApiService {
             @Field("course_id") int course_id,
             @Field("score") int score
     );
-
-    @POST("mobile/calendar")
-    @FormUrlEncoded
-    Call<GetResponseMessage> submitCalendar(
-            @Field("date") String date,
-            @Field("description") String description
-    );
-
-    @GET("mobile/calendar")
-    Call<GetResponseCalendar> getCalendar();
-
 }

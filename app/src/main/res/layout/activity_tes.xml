@@ -31,105 +31,119 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <RelativeLayout
-        android:id="@+id/relative_layout_soal"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_below="@id/app_bar"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="@drawable/background_container_soal">
+        android:layout_height="match_parent"
+        android:layout_below="@id/app_bar">
 
-        <TextView
-            android:id="@+id/text_view_soal"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:paddingTop="16dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"/>
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/text_view_indicator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textColor="@color/gradient_start_color"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="10dp"/>
+            <RelativeLayout
+                android:id="@+id/relative_layout_soal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/background_container_soal">
 
-    </RelativeLayout>
+                <TextView
+                    android:id="@+id/text_view_soal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"/>
 
-    <LinearLayout
-        android:id="@+id/linear_layout_options_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@id/relative_layout_soal"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp">
+                <TextView
+                    android:id="@+id/text_view_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/gradient_start_color"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/text_view_soal"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"/>
 
-        <Button
-            android:id="@+id/button_jawaban_satu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/background_container_soal"
-            android:gravity="start|center_vertical"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:textAllCaps="false"/>
+            </RelativeLayout>
 
-        <Button
-            android:id="@+id/button_jawaban_dua"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/background_container_soal"
-            android:layout_marginTop="10dp"
-            android:gravity="start|center_vertical"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:textAllCaps="false"/>
+            <LinearLayout
+                android:id="@+id/linear_layout_options_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@id/relative_layout_soal"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp">
 
-        <Button
-            android:id="@+id/button_jawaban_tiga"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/background_container_soal"
-            android:layout_marginTop="10dp"
-            android:gravity="start|center_vertical"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:textAllCaps="false"/>
+                <Button
+                    android:id="@+id/button_jawaban_satu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_container_soal"
+                    android:gravity="start|center_vertical"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:textAllCaps="false"/>
 
-        <Button
-            android:id="@+id/button_jawaban_empat"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/background_container_soal"
-            android:layout_marginTop="10dp"
-            android:gravity="start|center_vertical"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:textAllCaps="false"/>
+                <Button
+                    android:id="@+id/button_jawaban_dua"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_container_soal"
+                    android:layout_marginTop="10dp"
+                    android:gravity="start|center_vertical"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:textAllCaps="false"/>
 
-    </LinearLayout>
+                <Button
+                    android:id="@+id/button_jawaban_tiga"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_container_soal"
+                    android:layout_marginTop="10dp"
+                    android:gravity="start|center_vertical"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:textAllCaps="false"/>
 
-    <Button
-        android:id="@+id/button_next"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="next"
-        android:textColor="@color/white"
-        android:background="@drawable/btn_gradient_style_enable"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:enabled="false"
-        android:alpha="0.5"
-        android:layout_below="@id/linear_layout_options_container"/>
+                <Button
+                    android:id="@+id/button_jawaban_empat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_container_soal"
+                    android:layout_marginTop="10dp"
+                    android:gravity="start|center_vertical"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:textAllCaps="false"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button_next"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="next"
+                android:textColor="@color/white"
+                android:background="@drawable/btn_gradient_style_enable"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:enabled="false"
+                android:alpha="0.5"
+                android:layout_below="@id/linear_layout_options_container"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </RelativeLayout>
