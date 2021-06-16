@@ -9,6 +9,7 @@ import com.fauzighozali.mgamobile.model.GetResponseInbox;
 import com.fauzighozali.mgamobile.model.GetResponseLeaderboard;
 import com.fauzighozali.mgamobile.model.GetResponseMessage;
 import com.fauzighozali.mgamobile.model.GetResponseToken;
+import com.fauzighozali.mgamobile.model.GetResponseVideo;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -53,6 +54,9 @@ public interface ApiService {
 
     @GET("mobile/books")
     Call<GetResponseBook> getBook();
+
+    @GET("mobile/vhs")
+    Call<GetResponseVideo> getVideo();
 
     @GET("mobile/course_list_dashboard")
     Call<GetResponseCourse> getCourseCertificationDashboard(

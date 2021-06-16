@@ -1,11 +1,9 @@
 package com.fauzighozali.mgamobile.fragment;
 
-import android.content.ActivityNotFoundException;
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,14 +13,12 @@ import android.widget.RelativeLayout;
 
 import com.fauzighozali.mgamobile.R;
 import com.fauzighozali.mgamobile.activity.ChangePasswordActivity;
-import com.fauzighozali.mgamobile.activity.DetailCertificationActivity;
 import com.fauzighozali.mgamobile.activity.GuideActivity;
 import com.fauzighozali.mgamobile.activity.LoginActivity;
 import com.fauzighozali.mgamobile.activity.PrivacyPolicyActivity;
 import com.fauzighozali.mgamobile.api.ApiService;
 import com.fauzighozali.mgamobile.api.RetrofitBuilder;
 import com.fauzighozali.mgamobile.jwt.TokenManager;
-import com.fauzighozali.mgamobile.model.GetResponseDetailUser;
 import com.fauzighozali.mgamobile.model.GetResponseToken;
 
 import retrofit2.Call;

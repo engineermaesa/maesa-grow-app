@@ -1,16 +1,12 @@
 package com.fauzighozali.mgamobile.activity;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.view.KeyEvent;
+import androidx.appcompat.widget.Toolbar;
+
 import android.view.MenuItem;
-import android.view.View;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.fauzighozali.mgamobile.R;

@@ -2,9 +2,9 @@ package com.fauzighozali.mgamobile.activity;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -21,7 +21,6 @@ import com.fauzighozali.mgamobile.api.ApiService;
 import com.fauzighozali.mgamobile.api.RetrofitBuilder;
 import com.fauzighozali.mgamobile.jwt.TokenManager;
 import com.fauzighozali.mgamobile.model.GetResponseMessage;
-import com.fauzighozali.mgamobile.model.GetResponseToken;
 
 import retrofit2.Call;
 import retrofit2.Callback;

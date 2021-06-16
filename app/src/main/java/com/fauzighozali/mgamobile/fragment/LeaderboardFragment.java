@@ -4,11 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.Fragment;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.fragment.app.Fragment;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,17 +17,13 @@ import android.widget.LinearLayout;
 
 import com.fauzighozali.mgamobile.R;
 import com.fauzighozali.mgamobile.activity.LoginActivity;
-import com.fauzighozali.mgamobile.adapter.AllBookAdapter;
 import com.fauzighozali.mgamobile.adapter.LeaderboardAdapter;
 import com.fauzighozali.mgamobile.api.ApiService;
 import com.fauzighozali.mgamobile.api.RetrofitBuilder;
 import com.fauzighozali.mgamobile.jwt.TokenManager;
-import com.fauzighozali.mgamobile.model.Book;
-import com.fauzighozali.mgamobile.model.GetResponseBook;
 import com.fauzighozali.mgamobile.model.GetResponseLeaderboard;
 import com.fauzighozali.mgamobile.model.Leaderboard;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;

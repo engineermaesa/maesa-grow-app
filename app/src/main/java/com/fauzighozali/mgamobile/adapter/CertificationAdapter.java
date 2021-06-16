@@ -4,20 +4,18 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.fauzighozali.mgamobile.R;
@@ -27,12 +25,8 @@ import com.fauzighozali.mgamobile.api.ApiService;
 import com.fauzighozali.mgamobile.api.RetrofitBuilder;
 import com.fauzighozali.mgamobile.jwt.TokenManager;
 import com.fauzighozali.mgamobile.model.Course;
-import com.fauzighozali.mgamobile.model.GetResponseDetailUser;
 import com.fauzighozali.mgamobile.model.GetResponseMessage;
-import com.squareup.picasso.Picasso;
 
-import java.io.ByteArrayOutputStream;
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -83,14 +77,20 @@ public class CertificationAdapter extends RecyclerView.Adapter<CertificationAdap
 
             RelativeLayout relativeLayoutNo = mView.findViewById(R.id.relative_layout_no);
             RelativeLayout relativeLayoutYes = mView.findViewById(R.id.relative_layout_yes);
+            View mProgressBar = mView.findViewById(R.id.progress_bar_login);
+            ProgressBar mCycleProgressBar = mProgressBar.findViewById(R.id.progress_bar_cycle);
 
             relativeLayoutYes.setOnClickListener(vYes -> {
+                mProgressBar.setVisibility(View.VISIBLE);
+                mCycleProgressBar.setVisibility(View.VISIBLE);
+
                 tokenManager = TokenManager.getInstance(context.getSharedPreferences("prefs", Context.MODE_PRIVATE));
                 if (tokenManager.getToken() == null) {
                     context.startActivity(new Intent(context, LoginActivity.class));
                     ((Activity)context).finish();
                 }
                 service = RetrofitBuilder.createServiceWithAuth(ApiService.class, tokenManager);
+
                 call = service.acceptCourse(course.getId());
                 call.enqueue(new Callback<GetResponseMessage>() {
                     @Override
@@ -102,11 +102,15 @@ public class CertificationAdapter extends RecyclerView.Adapter<CertificationAdap
                             v.getContext().startActivity(intent);
                             mDialog.dismiss();
                         }
+                        mProgressBar.setVisibility(View.GONE);
+                        mCycleProgressBar.setVisibility(View.GONE);
                     }
 
                     @Override
                     public void onFailure(Call<GetResponseMessage> call, Throwable t) {
                         Log.w(TAG, "onFailure: " + t.getMessage());
+                        mProgressBar.setVisibility(View.GONE);
+                        mCycleProgressBar.setVisibility(View.GONE);
                     }
                 });
             });

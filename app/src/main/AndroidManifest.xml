@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.fauzighozali.mgamobile">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -12,7 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.HardSkillActivity"></activity>
+        <activity
+            android:name=".activity.SeeAllVideoMiniVHSActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.FullScreenVideoActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".activity.HardSkillActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.SplashActivity"
             android:screenOrientation="portrait">

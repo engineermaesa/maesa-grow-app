@@ -2,37 +2,31 @@ package com.fauzighozali.mgamobile.activity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v4.app.Fragment;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import com.google.android.material.navigation.NavigationView;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.fauzighozali.mgamobile.R;
 import com.fauzighozali.mgamobile.api.ApiService;
 import com.fauzighozali.mgamobile.api.RetrofitBuilder;
-import com.fauzighozali.mgamobile.fragment.CalendarFragment;
 import com.fauzighozali.mgamobile.fragment.CourseFragment;
 import com.fauzighozali.mgamobile.fragment.DashboardFragment;
 import com.fauzighozali.mgamobile.fragment.InboxFragment;
 import com.fauzighozali.mgamobile.fragment.LeaderboardFragment;
 import com.fauzighozali.mgamobile.fragment.SettingFragment;
 import com.fauzighozali.mgamobile.jwt.TokenManager;
-import com.fauzighozali.mgamobile.model.Course;
 import com.fauzighozali.mgamobile.model.GetResponseDetailUser;
-import com.fauzighozali.mgamobile.model.GetResponseToken;
-import com.fauzighozali.mgamobile.model.Organization;
 import com.fauzighozali.mgamobile.model.User;
-import com.google.firebase.iid.FirebaseInstanceId;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -154,7 +148,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         });
     }
 
-    private boolean callFragment(android.support.v4.app.Fragment fragment) {
+    private boolean callFragment(Fragment fragment) {
         if (fragment != null) {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.frame_container, fragment)

@@ -1,6 +1,6 @@
 package com.fauzighozali.mgamobile.api;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.fauzighozali.mgamobile.jwt.TokenManager;
 import com.fauzighozali.mgamobile.model.GetResponseToken;

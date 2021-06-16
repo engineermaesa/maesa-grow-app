@@ -38,8 +38,8 @@
 
             <LinearLayout
                 android:id="@+id/linear_layout_hard_skill"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_alignParentLeft="true"
                 android:gravity="center">
@@ -57,18 +57,18 @@
                     android:layout_marginTop="5dp"
                     android:textAlignment="center"
                     android:gravity="center_horizontal"
-                    android:textSize="10sp" />
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/linear_layout_soft_skill"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_toRightOf="@id/linear_layout_hard_skill"
                 android:gravity="center"
-                android:layout_marginLeft="20dp">
+                android:layout_marginLeft="10dp">
 
                 <ImageView
                     android:layout_width="30dp"
@@ -83,18 +83,18 @@
                     android:layout_marginTop="5dp"
                     android:textAlignment="center"
                     android:gravity="center_horizontal"
-                    android:textSize="10sp" />
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/linear_layout_our_company"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_toRightOf="@id/linear_layout_soft_skill"
                 android:gravity="center"
-                android:layout_marginLeft="20dp">
+                android:layout_marginLeft="10dp">
 
                 <ImageView
                     android:layout_width="30dp"
@@ -109,23 +109,22 @@
                     android:layout_marginTop="5dp"
                     android:textAlignment="center"
                     android:gravity="center_horizontal"
-                    android:textSize="10sp" />
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/linear_layout_corporate_value"
                 android:layout_width="80dp"
-                android:layout_height="70dp"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_toRightOf="@id/linear_layout_our_company"
-                android:gravity="center"
-                android:layout_marginLeft="20dp">
+                android:layout_marginLeft="10dp">
 
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_gravity="center"
+                    android:layout_gravity="center_horizontal"
                     android:scaleType="fitXY"
                     android:src="@drawable/pin_vhs" />
 
@@ -136,8 +135,7 @@
                     android:textColor="@color/black"
                     android:layout_marginTop="5dp"
                     android:textAlignment="center"
-                    android:gravity="center_horizontal"
-                    android:textSize="10sp" />
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
@@ -150,7 +148,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Book lending"
+                android:text="1 Visi Hati Semangat"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:layout_marginTop="30dp"
@@ -158,7 +156,7 @@
                 android:layout_alignParentLeft="true"/>
 
             <LinearLayout
-                android:id="@+id/linear_layout_seeall"
+                android:id="@+id/linear_layout_seeall_mini_vhs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -182,7 +180,55 @@
 
         </RelativeLayout>
 
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_mini_vhs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="10dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Book lending"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_alignParentLeft="true"/>
+
+            <LinearLayout
+                android:id="@+id/linear_layout_seeall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="see all"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/next"
+                    android:layout_marginLeft="5dp"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view_book"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
