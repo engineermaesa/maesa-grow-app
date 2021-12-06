@@ -5,7 +5,7 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".adapter.CertificationAdapter">
 
     <androidx.cardview.widget.CardView
@@ -28,8 +28,9 @@
 
             <RelativeLayout
                 android:id="@+id/relative_layout_background_status_course"
-                android:layout_width="50dp"
-                android:layout_height="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="15dp"
                 android:background="@drawable/btn_gradient_style_enable">
@@ -39,7 +40,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="textView"
-                    android:textSize="8sp"
+                    android:textSize="13sp"
                     android:textColor="@color/white"
                     android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true"/>
@@ -62,17 +63,19 @@
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:textColor="@color/black"
-                    android:textSize="13sp"
+                    android:textSize="15sp"
                     android:ellipsize="end"
-                    android:maxLines="2"/>
+                    android:maxLines="2"
+                    tools:text="Was india better then south africa in current serise?"/>
 
                 <TextView
                     android:id="@+id/text_view_description_certification"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="10sp"
+                    android:textSize="13sp"
                     android:ellipsize="end"
-                    android:maxLines="1"/>
+                    android:maxLines="1"
+                    tools:text="Was india better then south africa in current serise?"/>
 
             </LinearLayout>
 

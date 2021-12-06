@@ -15,15 +15,6 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".activity.SeeAllVideoMiniVHSActivity"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name=".activity.FullScreenVideoActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".activity.HardSkillActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".activity.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -102,6 +93,30 @@
         <activity
             android:name=".activity.PrivacyPolicyActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PostTestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MateriActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PreTestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.VideoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SeeAllVideoMiniVHSActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.FullScreenVideoActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".activity.HardSkillActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HistoryDetailCertificationActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

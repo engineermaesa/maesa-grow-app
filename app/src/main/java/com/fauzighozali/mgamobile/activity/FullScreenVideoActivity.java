@@ -45,7 +45,7 @@ public class FullScreenVideoActivity extends AppCompatActivity {
 
         SharedPreferences sharedpreferences = getSharedPreferences("mySharedPreferences", MODE_PRIVATE);
         String value = sharedpreferences.getString("uri", "");
-        videoView.setVideoPath("https://api-staging-kms.duatanganindonesia.com/files/" + value);
+        videoView.setVideoPath("http://api-kms.maesagroup.co.id/files/" + value);
 
         videoView.setOnPreparedListener(mp -> mp.setOnInfoListener((mediaPlayer, i, i1) -> {
             if (i == MediaPlayer.MEDIA_INFO_BUFFERING_START)

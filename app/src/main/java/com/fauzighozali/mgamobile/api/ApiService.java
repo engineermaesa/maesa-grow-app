@@ -29,6 +29,12 @@ public interface ApiService {
             @Field("token") String token
     );
 
+    @POST("mobile/firebase_token")
+    @FormUrlEncoded
+    Call<GetResponseToken> updateDeviceToken(
+            @Field("token") String token
+    );
+
     @POST("refresh")
     @FormUrlEncoded
     Call<GetResponseToken> refresh(
@@ -57,6 +63,9 @@ public interface ApiService {
 
     @GET("mobile/vhs")
     Call<GetResponseVideo> getVideo();
+
+    @GET("mobile/vhs_dashboard")
+    Call<GetResponseVideo> getVideoDashboard();
 
     @GET("mobile/course_list_dashboard")
     Call<GetResponseCourse> getCourseCertificationDashboard(
@@ -91,5 +100,13 @@ public interface ApiService {
     Call<GetResponseMessage> sumbitQuestion(
             @Field("course_id") int course_id,
             @Field("score") int score
+    );
+
+    @POST("mobile/submit_answer")
+    @FormUrlEncoded
+    Call<GetResponseMessage> sumbitAnswer(
+            @Field("course_id") int course_id,
+            @Field("score") int score,
+            @Field("pre_test") int pre_test
     );
 }

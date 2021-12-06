@@ -86,6 +86,12 @@ public class HardSkillActivity extends AppCompatActivity {
         getCourseCertification();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        getCourseCertification();
+    }
+
     private void getCourseCertification() {
         call = service.getCourseCertificationDashboard(1,1);
         call.enqueue(new Callback<GetResponseCourse>() {

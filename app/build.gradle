@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     defaultConfig {
         applicationId "com.fauzighozali.mgamobile"
-        minSdkVersion 17
-        targetSdkVersion 29
-        versionCode 6
-        versionName "1.3.4"
+        minSdkVersion 19
+        targetSdkVersion 30
+        versionCode 10
+        versionName "1.5.6"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
     buildTypes {
@@ -37,14 +37,15 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.5.2'
     implementation 'com.github.bumptech.glide:glide:3.7.0'
     implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+    implementation 'com.github.scottyab:showhidepasswordedittext:0.6'
 
-    //API
+    // Api
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
     implementation 'com.squareup.retrofit2:converter-moshi:2.3.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.0.2'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.5.0'
 
-    //NOTIFICATION
+    // Notification
     implementation 'com.google.firebase:firebase-messaging:11.0.2'
 
     // Image loading lib
@@ -53,8 +54,9 @@ dependencies {
 
     // Youtube lib
     implementation 'com.github.PierfrancescoSoffritti:AndroidYouTubePlayer:7.0.1'
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
 
-    // bind view
+    // Bind view
     implementation 'com.jakewharton:butterknife:10.1.0'
     annotationProcessor "com.jakewharton:butterknife-compiler:10.1.0"
 
@@ -62,5 +64,4 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
 }
-
 apply plugin: 'com.google.gms.google-services'

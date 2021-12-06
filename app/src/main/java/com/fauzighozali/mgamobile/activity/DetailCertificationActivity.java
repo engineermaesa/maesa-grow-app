@@ -83,7 +83,7 @@ public class DetailCertificationActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     Course course = response.body().getData();
                     Glide.with(getApplicationContext())
-                            .load("http://api-kms.maesagroup.co.id/files/" + course.getImage())
+                            .load(RetrofitBuilder.BASE_URL_FILE + course.getImage())
                             .into(ivCertification);
                     tvTitle.setText(course.getTitle());
                     ivNextPendahuluan.setOnClickListener(v -> {
@@ -92,14 +92,14 @@ public class DetailCertificationActivity extends AppCompatActivity {
                         startActivity(intentToPendahuluan);
                     });
                     ivNextMateriPembelajaran.setOnClickListener(v -> {
-                        Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://api-kms.maesagroup.co.id/files/" + course.getFile()));
+                        Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(RetrofitBuilder.BASE_URL_FILE + course.getFile()));
                         try {
                             DetailCertificationActivity.this.startActivity(webIntent);
                         } catch (ActivityNotFoundException ex) {
 
                         }
                     });
-                    if (course.getVideo().equals("")) {
+                    if (course.getVideo().equals("") && course.getLink().equals("")) {
                         rlVideo.setVisibility(View.GONE);
                         viewVideo.setVisibility(View.GONE);
                     }else {
@@ -107,17 +107,27 @@ public class DetailCertificationActivity extends AppCompatActivity {
                         viewVideo.setVisibility(View.VISIBLE);
                     }
                     ivWatchVideo.setOnClickListener(v -> {
-                        Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://api-kms.maesagroup.co.id/files/" + course.getVideo()));
-                        try {
-                            DetailCertificationActivity.this.startActivity(webIntent);
-                        } catch (ActivityNotFoundException ex) {
+                        if (!course.getVideo().equals("")){
+                            Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(RetrofitBuilder.BASE_URL_FILE + course.getVideo()));
+                            try {
+                                DetailCertificationActivity.this.startActivity(webIntent);
+                            } catch (ActivityNotFoundException ex) {
 
+                            }
+                        }else {
+                            Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(course.getLink()));
+                            try {
+                                DetailCertificationActivity.this.startActivity(webIntent);
+                            } catch (ActivityNotFoundException ex) {
+
+                            }
                         }
                     });
                     ivNextTes.setOnClickListener(v -> {
                         Intent intentToTest = new Intent(DetailCertificationActivity.this, TesActivity.class);
                         intentToTest.putExtra("course_id", intent.getIntExtra("course_id",0));
                         startActivity(intentToTest);
+                        finish();
                     });
                 }
             }

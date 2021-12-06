@@ -86,6 +86,12 @@ public class OrientedActivity extends AppCompatActivity {
         getCourseOriented();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        getCourseOriented();
+    }
+
     private void getCourseOriented() {
         call = service.getCourseCertificationDashboard(2,1);
         call.enqueue(new Callback<GetResponseCourse>() {

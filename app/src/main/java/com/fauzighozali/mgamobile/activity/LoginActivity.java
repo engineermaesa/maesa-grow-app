@@ -1,8 +1,11 @@
 package com.fauzighozali.mgamobile.activity;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputFilter;
@@ -12,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.fauzighozali.mgamobile.R;
@@ -20,6 +24,7 @@ import com.fauzighozali.mgamobile.api.RetrofitBuilder;
 import com.fauzighozali.mgamobile.jwt.TokenManager;
 import com.fauzighozali.mgamobile.model.GetResponseToken;
 import com.google.firebase.iid.FirebaseInstanceId;
+import com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -30,7 +35,9 @@ public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
     private LoginActivity self;
 
-    private EditText etUsername, etPassword;
+    private EditText etUsername;
+    private TextView tvForgot;
+    private ShowHidePasswordEditText etPassword;
     private Button btnLogin;
     private View mProgressBar;
     private ProgressBar mCycleProgressBar;
@@ -51,6 +58,7 @@ public class LoginActivity extends AppCompatActivity {
         etUsername.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
         etPassword = findViewById(R.id.edit_text_password);
         btnLogin = findViewById(R.id.button_login);
+        tvForgot = findViewById(R.id.text_view_forgot);
 
         service = RetrofitBuilder.createService(ApiService.class);
         tokenManager = TokenManager.getInstance(getSharedPreferences("prefs", MODE_PRIVATE));
@@ -61,6 +69,7 @@ public class LoginActivity extends AppCompatActivity {
 
         emailpassTextChanged();
         btnLogin.setOnClickListener(v -> navigateToHome());
+        tvForgot.setOnClickListener(v -> navigateToWa());
     }
 
     public void emailpassTextChanged() {
@@ -152,5 +161,29 @@ public class LoginActivity extends AppCompatActivity {
                 mCycleProgressBar.setVisibility(View.GONE);
             }
         });
+    }
+
+    public void navigateToWa() {
+        String mobileNumber = "81213240016";
+        boolean installed = appInstalledOrNot("com.whatsapp");
+        if (installed){
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("http://api.whatsapp.com/send?phone="+"+62"+mobileNumber));
+            startActivity(intent);
+        }else {
+            Toast.makeText(LoginActivity.this, "Install aplikasi whatsapp dulu ya!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private boolean appInstalledOrNot(String url){
+        PackageManager packageManager = getPackageManager();
+        boolean app_installed;
+        try {
+            packageManager.getPackageInfo(url,PackageManager.GET_ACTIVITIES);
+            app_installed = true;
+        }catch (PackageManager.NameNotFoundException e){
+            app_installed = false;
+        }
+        return app_installed;
     }
 }

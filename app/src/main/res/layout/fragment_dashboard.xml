@@ -57,7 +57,7 @@
                     android:layout_marginTop="5dp"
                     android:textAlignment="center"
                     android:gravity="center_horizontal"
-                    android:textSize="12sp" />
+                    android:textSize="13sp" />
 
             </LinearLayout>
 
@@ -83,7 +83,7 @@
                     android:layout_marginTop="5dp"
                     android:textAlignment="center"
                     android:gravity="center_horizontal"
-                    android:textSize="12sp" />
+                    android:textSize="13sp" />
 
             </LinearLayout>
 
@@ -109,7 +109,7 @@
                     android:layout_marginTop="5dp"
                     android:textAlignment="center"
                     android:gravity="center_horizontal"
-                    android:textSize="12sp" />
+                    android:textSize="13sp" />
 
             </LinearLayout>
 
@@ -135,7 +135,7 @@
                     android:textColor="@color/black"
                     android:layout_marginTop="5dp"
                     android:textAlignment="center"
-                    android:textSize="12sp" />
+                    android:textSize="13sp" />
 
             </LinearLayout>
 

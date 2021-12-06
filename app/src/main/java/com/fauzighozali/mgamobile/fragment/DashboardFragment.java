@@ -93,7 +93,7 @@ public class DashboardFragment extends Fragment {
         service = RetrofitBuilder.createService(ApiService.class);
         serviceWithToken = RetrofitBuilder.createServiceWithAuth(ApiService.class, tokenManager);
 
-        Picasso.with(getContext()).load("http://api-kms.maesagroup.co.id/files/" + tokenManager.getToken().getFile()).into(ivIdCard);
+        Picasso.with(getContext()).load(RetrofitBuilder.BASE_URL_FILE + tokenManager.getToken().getFile()).into(ivIdCard);
         getDataBook();
         getDataVideo();
 
@@ -138,7 +138,7 @@ public class DashboardFragment extends Fragment {
     }
 
     private void getDataVideo() {
-        callVideo = serviceWithToken.getVideo();
+        callVideo = serviceWithToken.getVideoDashboard();
         callVideo.enqueue(new Callback<GetResponseVideo>() {
             @Override
             public void onResponse(Call<GetResponseVideo> call, Response<GetResponseVideo> response) {

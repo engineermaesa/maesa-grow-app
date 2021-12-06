@@ -2,16 +2,21 @@ package com.fauzighozali.mgamobile.api;
 
 import com.fauzighozali.mgamobile.jwt.TokenManager;
 
+import java.util.Collections;
+
+import okhttp3.CipherSuite;
+import okhttp3.ConnectionSpec;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.TlsVersion;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitBuilder {
 
-    private static final String BASE_URL = "https://api-staging-kms.duatanganindonesia.com/api/";
-//    private static final String BASE_URL = "http://api-kms.maesagroup.co.id/api/";
+    private static final String BASE_URL = "http://api-staging-kms.duatanganindonesia.com/api/";
+    public static final String BASE_URL_FILE = "http://api-staging-kms.duatanganindonesia.com/files/";
 
     private final static OkHttpClient client = buildClient();
     private final static Retrofit retrofit = buildRetrofit(client);
@@ -19,6 +24,7 @@ public class RetrofitBuilder {
     private static OkHttpClient buildClient() {
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+
         OkHttpClient.Builder builder = new OkHttpClient.Builder()
                 .addInterceptor(interceptor)
                 .addInterceptor(chain -> {
@@ -32,6 +38,7 @@ public class RetrofitBuilder {
 
                     return chain.proceed(request);
                 });
+
         return builder.build();
     }
 
@@ -59,12 +66,8 @@ public class RetrofitBuilder {
             request = builder.build();
             return chain.proceed(request);
         }).authenticator(CustomAuthenticator.getInstance(tokenManager)).build();
-
         Retrofit newRetrofit = retrofit.newBuilder().client(newClient).build();
-        return newRetrofit.create(service);
-    }
 
-    public static Retrofit getRetrofit() {
-        return retrofit;
+        return newRetrofit.create(service);
     }
 }

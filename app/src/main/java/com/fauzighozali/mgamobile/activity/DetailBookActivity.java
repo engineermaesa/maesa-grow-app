@@ -35,10 +35,6 @@ public class DetailBookActivity extends AppCompatActivity {
             getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back);
         }
 
-        getDisplay();
-    }
-
-    public void getDisplay() {
         Intent intent = getIntent();
         mTitleBook.setText(intent.getStringExtra("title"));
         mDescBook.setText(intent.getStringExtra("long_desc"));

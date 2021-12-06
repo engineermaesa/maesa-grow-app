@@ -16,12 +16,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.fauzighozali.mgamobile.R;
-import com.fauzighozali.mgamobile.adapter.CertificationAdapter;
+import com.fauzighozali.mgamobile.adapter.CorporateValueAdapter;
 import com.fauzighozali.mgamobile.api.ApiService;
 import com.fauzighozali.mgamobile.api.RetrofitBuilder;
 import com.fauzighozali.mgamobile.jwt.TokenManager;
-import com.fauzighozali.mgamobile.model.Course;
-import com.fauzighozali.mgamobile.model.GetResponseCourse;
+import com.fauzighozali.mgamobile.model.GetResponseVideo;
+import com.fauzighozali.mgamobile.model.Video;
 
 import java.util.List;
 
@@ -38,13 +38,13 @@ public class VHSActivity extends AppCompatActivity {
     private LinearLayout llEmptyCourse;
     private SwipeRefreshLayout swipeContainer;
 
-    private CertificationAdapter certificationAdapter;
+    private CorporateValueAdapter certificationAdapter;
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
 
     private ApiService service;
     private TokenManager tokenManager;
-    private Call<GetResponseCourse> call;
+    private Call<GetResponseVideo> call;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,17 +86,23 @@ public class VHSActivity extends AppCompatActivity {
         getCourseVHS();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        getCourseVHS();
+    }
+
     private void getCourseVHS() {
-        call = service.getCourseCertificationDashboard(3,1);
-        call.enqueue(new Callback<GetResponseCourse>() {
+        call = service.getVideo();
+        call.enqueue(new Callback<GetResponseVideo>() {
             @Override
-            public void onResponse(Call<GetResponseCourse> call, Response<GetResponseCourse> response) {
+            public void onResponse(Call<GetResponseVideo> call, Response<GetResponseVideo> response) {
                 Log.w(TAG, "onResponse: " + response);
 
                 if (response.isSuccessful()) {
-                    List<Course> courseList = response.body().getData();
+                    List<Video> courseList = response.body().getData();
                     if (courseList.size() > 0) {
-                        certificationAdapter = new CertificationAdapter(courseList, getApplicationContext());
+                        certificationAdapter = new CorporateValueAdapter(courseList, getApplicationContext());
                         recyclerView.setAdapter(certificationAdapter);
                     }else {
                         llEmptyCourse.setVisibility(View.VISIBLE);
@@ -106,7 +112,7 @@ public class VHSActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<GetResponseCourse> call, Throwable t) {
+            public void onFailure(Call<GetResponseVideo> call, Throwable t) {
                 Log.w(TAG, "onFailure: " + t.getMessage());
             }
         });

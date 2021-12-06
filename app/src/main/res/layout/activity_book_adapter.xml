@@ -14,14 +14,15 @@
     <LinearLayout
         android:id="@+id/linear_layout_book_in_dashboard"
         android:layout_width="match_parent"
-        android:layout_height="125dp"
+        android:layout_height="100dp"
         android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/image_view_book"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:scaleType="fitXY" />
+            android:scaleType="fitXY"
+            android:src="@drawable/pin_vhs"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -35,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="The 360 Degree Leader: Developing Your Influence from Anywhere in the Organization"
-                android:textSize="13sp"
+                android:textSize="15sp"
                 android:textStyle="bold"
                 android:ellipsize="end"
                 android:maxLines="2"
@@ -46,11 +47,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Get Up to Speed Quickly in Today's Ever-Changing Sales World"
-                android:textSize="12sp"
+                android:textSize="13sp"
                 android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:layout_below="@id/text_view_title_book"/>
+                android:layout_below="@id/text_view_title_book"
+                android:layout_toLeftOf="@id/button_book_read_now"/>
 
             <Button
                 android:id="@+id/button_book_read_now"
@@ -59,7 +62,7 @@
                 android:text="Read now"
                 android:textColor="@color/white"
                 android:textAllCaps="false"
-                android:textSize="12sp"
+                android:textSize="13sp"
                 android:background="@drawable/background_top_dashboard"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"

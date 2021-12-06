@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.fauzighozali.mgamobile.R;
 import com.fauzighozali.mgamobile.activity.DetailBookActivity;
+import com.fauzighozali.mgamobile.api.RetrofitBuilder;
 import com.fauzighozali.mgamobile.model.Book;
 import com.squareup.picasso.Picasso;
 
@@ -40,7 +41,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
     public void onBindViewHolder(@NonNull BookViewHolder bookViewHolder, int i) {
         Book book = dataModelArrayList.get(i);
 
-        Picasso.with(context).load("http://api-kms.maesagroup.co.id/files/" + book.getImage()).into(bookViewHolder.imgBook);
+        Picasso.with(context).load(RetrofitBuilder.BASE_URL_FILE + book.getImage()).into(bookViewHolder.imgBook);
         bookViewHolder.titleBook.setText(book.getTitle());
         bookViewHolder.descBook.setText(book.getDescription());
 

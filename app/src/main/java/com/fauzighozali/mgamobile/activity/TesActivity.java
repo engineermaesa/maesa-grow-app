@@ -107,7 +107,7 @@ public class TesActivity extends AppCompatActivity {
                         if (position == list.size()) {
                             try {
                                 AlertDialog.Builder builder = new AlertDialog.Builder(TesActivity.this);
-                                View layout = ((Activity)v.getContext()).getLayoutInflater().inflate(R.layout.level_up_screen, null);
+                                View layout = getLayoutInflater().inflate(R.layout.level_up_screen, null);
                                 TextView tvScore = layout.findViewById(R.id.text_view_score);
                                 TextView tvTotal = layout.findViewById(R.id.text_view_total_course);
                                 TextView tvTestDone = layout.findViewById(R.id.text_view_test_done);
@@ -221,12 +221,12 @@ public class TesActivity extends AppCompatActivity {
             }else {
                 selectOption.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.btn_gradient_red) );
             }
-            Button correctoption = optionsContainer.findViewWithTag(list.get(position).getAnswer_true());
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                correctoption.setBackground(getResources().getDrawable(R.drawable.btn_gradient_green));
-            }else {
-                correctoption.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.btn_gradient_green) );
-            }
+//            Button correctoption = optionsContainer.findViewWithTag(list.get(position).getAnswer_true());
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+//                correctoption.setBackground(getResources().getDrawable(R.drawable.btn_gradient_green));
+//            }else {
+//                correctoption.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.btn_gradient_green) );
+//            }
         }
     }
 

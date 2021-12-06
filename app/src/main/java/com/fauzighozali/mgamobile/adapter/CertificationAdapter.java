@@ -60,7 +60,7 @@ public class CertificationAdapter extends RecyclerView.Adapter<CertificationAdap
         Course course = dataModelArrayList.get(i);
 
         Glide.with(context)
-                .load("http://api-kms.maesagroup.co.id/files/" + course.getImage())
+                .load(RetrofitBuilder.BASE_URL_FILE + course.getImage())
                 .into(certificationViewHolder.imgCertification);
 
         certificationViewHolder.tvTitle.setText(course.getTitle());
@@ -116,6 +116,7 @@ public class CertificationAdapter extends RecyclerView.Adapter<CertificationAdap
             });
             mDialog.show();
             relativeLayoutNo.setOnClickListener(vNo -> mDialog.dismiss());
+
         });
     }
 

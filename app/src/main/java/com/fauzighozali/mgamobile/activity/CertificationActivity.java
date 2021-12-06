@@ -86,6 +86,12 @@ public class CertificationActivity extends AppCompatActivity {
         getCourseCertification();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        getCourseCertification();
+    }
+
     private void getCourseCertification() {
         call = service.getCourseCertificationDashboard(4,1);
         call.enqueue(new Callback<GetResponseCourse>() {

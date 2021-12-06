@@ -10,6 +10,7 @@ import android.webkit.WebViewClient;
 import android.widget.TextView;
 
 import com.fauzighozali.mgamobile.R;
+import com.fauzighozali.mgamobile.api.RetrofitBuilder;
 
 public class PrivacyPolicyActivity extends AppCompatActivity {
 
@@ -48,13 +49,10 @@ public class PrivacyPolicyActivity extends AppCompatActivity {
     }
 
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        //ketika disentuh tombol back
         if ((keyCode == KeyEvent.KEYCODE_BACK) && webViewTnc.canGoBack()) {
-            webViewTnc.goBack(); //method goback(),untuk kembali ke halaman sebelumnya
+            webViewTnc.goBack();
             return true;
         }
-        // Jika tidak ada halaman yang pernah dibuka
-        // maka akan keluar dari activity (tutup aplikasi)
         return super.onKeyDown(keyCode, event);
     }
 

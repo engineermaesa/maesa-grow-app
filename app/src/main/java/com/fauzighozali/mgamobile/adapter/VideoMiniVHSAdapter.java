@@ -25,6 +25,7 @@ import android.widget.VideoView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.fauzighozali.mgamobile.R;
+import com.fauzighozali.mgamobile.api.RetrofitBuilder;
 import com.fauzighozali.mgamobile.model.Video;
 import com.fauzighozali.mgamobile.util.FullScreenMediaController;
 import com.pierfrancescosoffritti.youtubeplayer.player.AbstractYouTubePlayerListener;
@@ -41,8 +42,7 @@ public class VideoMiniVHSAdapter extends RecyclerView.Adapter<VideoMiniVHSAdapte
     private List<Video> mYoutubeVideos;
     private Context context;
 
-    MediaController mediaController;
-    ProgressDialog pd;
+    private MediaController mediaController;
 
     public VideoMiniVHSAdapter(List<Video> youtubeVideos, Context context) {
         this.mYoutubeVideos = youtubeVideos;
@@ -61,16 +61,17 @@ public class VideoMiniVHSAdapter extends RecyclerView.Adapter<VideoMiniVHSAdapte
     public void onBindViewHolder(VideoMiniVHSViewHolder holder, int position) {
         Video mYoutubeVideo = mYoutubeVideos.get(position);
         holder.tvTitle.setText(mYoutubeVideo.getTitle());
+        holder.tvDescription.setText(mYoutubeVideo.getDescription());
 
         SharedPreferences sharedpreferences = context.getSharedPreferences("mySharedPreferences", MODE_PRIVATE);
         SharedPreferences.Editor PrefsEditor = sharedpreferences.edit();
 
-        Glide.with(context).load("https://api-staging-kms.duatanganindonesia.com/files/" + mYoutubeVideo.getThumbnail()).into(holder.ivThumbnail);
+        Glide.with(context).load(RetrofitBuilder.BASE_URL_FILE + mYoutubeVideo.getThumbnail()).into(holder.ivThumbnail);
 
-        mediaController = new FullScreenMediaController(context);
+        mediaController = new MediaController(context);
         mediaController.setAnchorView(holder.videoView);
 
-        holder.videoView.setVideoPath("https://api-staging-kms.duatanganindonesia.com/files/" + mYoutubeVideo.getVideo());
+        holder.videoView.setVideoPath(RetrofitBuilder.BASE_URL_FILE + mYoutubeVideo.getVideo());
         holder.videoView.setMediaController(mediaController);
         holder.videoView.setKeepScreenOn(true);
 
@@ -105,7 +106,7 @@ public class VideoMiniVHSAdapter extends RecyclerView.Adapter<VideoMiniVHSAdapte
 
     public class VideoMiniVHSViewHolder extends RecyclerView.ViewHolder {
         private VideoView videoView;
-        private TextView tvTitle;
+        private TextView tvTitle, tvDescription;
         private ImageView ivPlay, ivThumbnail;
         private ProgressBar mCycleProgressBar;
 
@@ -113,6 +114,7 @@ public class VideoMiniVHSAdapter extends RecyclerView.Adapter<VideoMiniVHSAdapte
             super(itemView);
             videoView = itemView.findViewById(R.id.video);
             tvTitle = itemView.findViewById(R.id.textViewTitle);
+            tvDescription = itemView.findViewById(R.id.textViewDescription);
             ivPlay = itemView.findViewById(R.id.btnPlay);
             ivThumbnail = itemView.findViewById(R.id.imageViewItem);
             mCycleProgressBar = itemView.findViewById(R.id.progress_bar_cycle);

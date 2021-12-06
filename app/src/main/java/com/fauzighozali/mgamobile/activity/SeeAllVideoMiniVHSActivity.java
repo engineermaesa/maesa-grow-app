@@ -73,7 +73,7 @@ public class SeeAllVideoMiniVHSActivity extends AppCompatActivity {
     }
 
     private void getDataVideo() {
-        call = service.getVideo();
+        call = service.getVideoDashboard();
         call.enqueue(new Callback<GetResponseVideo>() {
             @Override
             public void onResponse(Call<GetResponseVideo> call, Response<GetResponseVideo> response) {

@@ -10,6 +10,9 @@ public class Course {
     @SerializedName("id")
     @Expose
     private Integer id;
+    @SerializedName("course_id")
+    @Expose
+    private Integer course_id;
     @SerializedName("title")
     @Expose
     private String title;
@@ -39,7 +42,22 @@ public class Course {
     private String status;
     @SerializedName("test")
     @Expose
-    private List<Test> test = null;
+    private List<Test> test;
+    @SerializedName("pre_test")
+    @Expose
+    private List<PreTest> preTest;
+    @SerializedName("pre_score")
+    @Expose
+    private Integer preScore;
+    @SerializedName("post_score")
+    @Expose
+    private Integer postScore;
+    @SerializedName("pre_status")
+    @Expose
+    private String preStatus;
+    @SerializedName("post_status")
+    @Expose
+    private String postStatus;
 
     public Integer getId() {
         return id;
@@ -127,5 +145,53 @@ public class Course {
 
     public void setTest(List<Test> test) {
         this.test = test;
+    }
+
+    public List<PreTest> getPreTest() {
+        return preTest;
+    }
+
+    public void setPreTest(List<PreTest> preTest) {
+        this.preTest = preTest;
+    }
+
+    public Integer getPreScore() {
+        return preScore;
+    }
+
+    public void setPreScore(Integer preScore) {
+        this.preScore = preScore;
+    }
+
+    public String getPreStatus() {
+        return preStatus;
+    }
+
+    public void setPreStatus(String preStatus) {
+        this.preStatus = preStatus;
+    }
+
+    public Integer getPostScore() {
+        return postScore;
+    }
+
+    public void setPostScore(Integer postScore) {
+        this.postScore = postScore;
+    }
+
+    public String getPostStatus() {
+        return postStatus;
+    }
+
+    public void setPostStatus(String postStatus) {
+        this.postStatus = postStatus;
+    }
+
+    public Integer getCourse_id() {
+        return course_id;
+    }
+
+    public void setCourse_id(Integer course_id) {
+        this.course_id = course_id;
     }
 }

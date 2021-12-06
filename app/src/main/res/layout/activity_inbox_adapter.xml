@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cafe CEO"
-        android:textSize="13sp"
+        android:textSize="15sp"
         android:textStyle="bold"
         android:textColor="@color/black"/>
 
@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="CAFE CEO #6 : MAESA LAWAN CORONA Ada yang berbeda pada pelaksanaan Café CEO #6 Bulan April ini, dimana biasanya acara diselenggarakan di café dengan mengundang para peserta. Tapi, dikarenakan adanya Pandemi Corona, maka acara dilaksanakan secara Online. Acara Café CEO..."
-        android:textSize="11sp"
+        android:textSize="13sp"
         android:layout_marginTop="5dp"
         android:ellipsize="end"
         android:maxLines="3"/>

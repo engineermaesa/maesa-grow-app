@@ -24,7 +24,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="/private/var/folders/nc/6msgxprd0y75bznj68bsl3380000gn/T/baseline_fullscreen_exit_24.xml" />
+                                                <entry key="imagePath" value="/private/var/folders/nc/6msgxprd0y75bznj68bsl3380000gn/T/baseline_visibility_off_24.xml" />
                                                 <entry key="opacityPercent" value="80" />
                                               </map>
                                             </option>
@@ -36,7 +36,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="url" value="jar:file:/Applications/Android%20Studio.app/Contents/plugins/android/lib/android.jar!/images/material/icons/materialicons/fullscreen_exit/baseline_fullscreen_exit_24.xml" />
+                                                <entry key="url" value="jar:file:/Applications/Android%20Studio.app/Contents/plugins/android/lib/android.jar!/images/material/icons/materialicons/visibility_off/baseline_visibility_off_24.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -68,9 +68,9 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="outputName" value="ic_fullscreen_exit" />
+                                      <entry key="outputName" value="edittext_hide_eye_icon" />
                                       <entry key="theme" value="CUSTOM" />
-                                      <entry key="themeColor" value="ffffff" />
+                                      <entry key="themeColor" value="4c81f7" />
                                     </map>
                                   </option>
                                 </PersistentState>

@@ -3,6 +3,8 @@ package com.fauzighozali.mgamobile.activity;
 import android.content.Context;
 import android.content.Intent;
 import androidx.fragment.app.Fragment;
+
+import com.fauzighozali.mgamobile.model.GetResponseToken;
 import com.google.android.material.navigation.NavigationView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -27,6 +29,7 @@ import com.fauzighozali.mgamobile.fragment.SettingFragment;
 import com.fauzighozali.mgamobile.jwt.TokenManager;
 import com.fauzighozali.mgamobile.model.GetResponseDetailUser;
 import com.fauzighozali.mgamobile.model.User;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -49,6 +52,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private ApiService service;
     private TokenManager tokenManager;
     private Call<GetResponseDetailUser> callDetailUser;
+    private Call<GetResponseToken> callUpdateToken;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +86,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         service = RetrofitBuilder.createServiceWithAuth(ApiService.class, tokenManager);
 
         getDetailUser();
+        updateDeviceToken();
     }
 
     @Override
@@ -123,6 +128,16 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         return callFragment(fragment);
     }
 
+    private boolean callFragment(Fragment fragment) {
+        if (fragment != null) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.frame_container, fragment)
+                    .commit();
+            return true;
+        }
+        return false;
+    }
+
     private void getDetailUser() {
         callDetailUser = service.getDetailUser();
         callDetailUser.enqueue(new Callback<GetResponseDetailUser>() {
@@ -148,13 +163,21 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         });
     }
 
-    private boolean callFragment(Fragment fragment) {
-        if (fragment != null) {
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.frame_container, fragment)
-                    .commit();
-            return true;
-        }
-        return false;
+    private void updateDeviceToken() {
+        String token = FirebaseInstanceId.getInstance().getToken();
+        Log.w(TAG, "Token Firebase: " + token);
+
+        callUpdateToken = service.updateDeviceToken(token);
+        callUpdateToken.enqueue(new Callback<GetResponseToken>() {
+            @Override
+            public void onResponse(Call<GetResponseToken> call, Response<GetResponseToken> response) {
+                Log.w(TAG, "onResponse: " + response);
+            }
+
+            @Override
+            public void onFailure(Call<GetResponseToken> call, Throwable t) {
+                Log.w(TAG, "onFailure: " + t.getMessage());
+            }
+        });
     }
 }

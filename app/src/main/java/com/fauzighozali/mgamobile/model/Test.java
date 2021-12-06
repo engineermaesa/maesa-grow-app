@@ -13,9 +13,6 @@ public class Test {
     @SerializedName("question")
     @Expose
     private String question;
-//    @SerializedName("answer")
-//    @Expose
-//    private List<Answer> answer;
     @SerializedName("answer_true")
     @Expose
     private String answer_true;
@@ -47,14 +44,6 @@ public class Test {
     public void setQuestion(String question) {
         this.question = question;
     }
-
-//    public List<Answer> getAnswer() {
-//        return answer;
-//    }
-//
-//    public void setAnswer(List<Answer> answer) {
-//        this.answer = answer;
-//    }
 
     public String getAnswer_true() {
         return answer_true;
