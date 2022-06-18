@@ -5,11 +5,18 @@
       <map>
         <entry key="app/src/main/res/drawable-anydpi/edittext_hide_eye_icon.xml" value="0.15703125" />
         <entry key="app/src/main/res/drawable/background_top_dashboard.xml" value="0.183984375" />
+        <entry key="app/src/main/res/drawable/btn_gradient_style_enable.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/indicator_default.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/indicator_selected.xml" value="0.11041666666666666" />
+        <entry key="app/src/main/res/drawable/indicator_selector.xml" value="0.11041666666666666" />
         <entry key="app/src/main/res/layout/activity_detail_book.xml" value="0.12329234972677595" />
+        <entry key="app/src/main/res/layout/activity_intro.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_see_all_book.xml" value="0.10348360655737705" />
         <entry key="app/src/main/res/layout/activity_see_all_book_adapter.xml" value="0.12329234972677595" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.12329234972677595" />
+        <entry key="app/src/main/res/layout/layout_screen.xml" value="0.1" />
       </map>
     </option>
   </component>
